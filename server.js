@@ -7,6 +7,9 @@ app.use(express.static(__dirname + '/'));
 // app.use(express.static(__dirname + '/css'));
 
 app.get('/', function(request, response) {
+  var mapkey = '';
+  var times = process.env.mapkey;
+  response.send(mapkey);
   response.render('index.html');
 });
 
