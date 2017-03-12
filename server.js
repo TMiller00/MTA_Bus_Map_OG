@@ -18,7 +18,7 @@ const mtaURL = 'https://bustime.mta.info/api/siri/vehicle-monitoring.json?key=' 
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/'), function(request, response) {
-  req.pipe(request(mtaURL)).pipe(response);
+  request.pipe(request(mtaURL)).pipe(response);
 });
 // app.use(express.static(__dirname + '/css'));
 
