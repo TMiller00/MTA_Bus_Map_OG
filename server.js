@@ -11,8 +11,7 @@ app.get('/', function(request, response) {
     mtakey: process.env.mtakey,
     mapkey: process.env.mapkey
   };
-  response.send(config);
-  response.render('index.html');
+  response.render('index.html', config);
 });
 
 app.listen(app.get('port'), function() {
