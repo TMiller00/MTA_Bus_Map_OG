@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { Map, Circle, Tooltip, TileLayer } from 'react-leaflet';
-const mtakey = process.env.mtakey;
-const mapkey = process.env.mapkey;
+const mtakey = config.mtakey;
+const mapkey = config.mapkey;
 const mtaURL = 'https://bustime.mta.info/api/siri/vehicle-monitoring.json?key=' + mtakey;
 const mapURL = 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=' + mapkey;
 const position = [40.756410, -73.845301];

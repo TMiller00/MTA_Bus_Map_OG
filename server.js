@@ -7,8 +7,11 @@ app.use(express.static(__dirname + '/'));
 // app.use(express.static(__dirname + '/css'));
 
 app.get('/', function(request, response) {
-  var mapkey = process.env.mapkey;
-  console.log(mapkey);
+  let config = {
+    mtakey: process.env.mtakey,
+    mapkey: process.env.mapkey
+  };
+  response.send(config);
   response.render('index.html');
 });
 
