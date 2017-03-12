@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import { Map, Circle, Tooltip, TileLayer } from 'react-leaflet';
-const mtakey = config.mtakey;
+// const mtakey = config.mtakey;
 const mapkey = config.mapkey;
-const mtaURL = 'https://bustime.mta.info/api/siri/vehicle-monitoring.json?key=' + mtakey;
+// const mtaURL = 'https://bustime.mta.info/api/siri/vehicle-monitoring.json?key=' + mtakey;
 const mapURL = 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/256/{z}/{x}/{y}?access_token=' + mapkey;
 const position = [40.756410, -73.845301];
 
@@ -56,18 +56,26 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
+  ConfigVars() {
+
+  }
+
+  BusLocations() {
     var _this = this;
     var data;
     this.serverRequest =
       axios
-       .get(mapURL) // for development, use "http://localhost:3333/api/"
+       .get("http://localhost:5000/") // for development, use "http://localhost:3333/api/"
        .then(function(result) {
          data = result['data']['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity'];
          _this.setState({
            buses: data
          });
        })
+  }
+
+  componentDidMount() {
+    this.BusLocations();
   }
 
   componentWillUnmount() {
