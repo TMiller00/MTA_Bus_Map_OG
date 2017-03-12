@@ -61,7 +61,7 @@ class App extends React.Component {
     var data;
     this.serverRequest =
       axios
-       .get(mtaURL) // for development, use "http://localhost:3333/api/"
+       .get(mapURL) // for development, use "http://localhost:3333/api/"
        .then(function(result) {
          data = result['data']['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity'];
          _this.setState({
