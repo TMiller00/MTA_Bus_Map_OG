@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
       <div>
         <Map style={{height: "100vh", margin: "0"}} center={[lat, lng]} zoom={12}>
-          <TileLayer url='https://{s}.tile.osm.org/{z}/{x}/{y}.png' attribution="Mom" />
+          <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' attribution="Mom" />
           {buses.map(bus => {
             if (bus.MonitoredVehicleJourney.MonitoredCall) {
               return(

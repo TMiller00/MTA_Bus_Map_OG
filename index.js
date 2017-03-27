@@ -26489,7 +26489,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           _reactLeaflet.Map,
           { style: { height: "100vh", margin: "0" }, center: [lat, lng], zoom: 12 },
-          _react2.default.createElement(_reactLeaflet.TileLayer, { url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png', attribution: 'Mom' }),
+          _react2.default.createElement(_reactLeaflet.TileLayer, { url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', attribution: 'Mom' }),
           buses.map(function (bus) {
             if (bus.MonitoredVehicleJourney.MonitoredCall) {
               return _react2.default.createElement(_BusMarker2.default, { key: bus.MonitoredVehicleJourney.VehicleRef,
