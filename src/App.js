@@ -17,7 +17,7 @@ class App extends React.Component {
     var data;
     this.serverRequest =
       axios
-       .get("http://localhost:5000/api/")
+       .get("https://localhost:5000/api/")
        .then((result) => {
          data = result['data']['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity'];
          this.setState({
@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
       <div>
         <Map style={{height: "100vh", margin: "0"}} center={[lat, lng]} zoom={12}>
-          <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' attribution="Mom" />
+          <TileLayer url='https://{s}.tile.osm.org/{z}/{x}/{y}.png' attribution="Mom" />
           {buses.map(bus => {
             if (bus.MonitoredVehicleJourney.MonitoredCall) {
               return(

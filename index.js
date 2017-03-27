@@ -26457,7 +26457,7 @@ var App = function (_React$Component) {
       var _this2 = this;
 
       var data;
-      this.serverRequest = _axios2.default.get("http://localhost:5000/api/").then(function (result) {
+      this.serverRequest = _axios2.default.get("https://localhost:5000/api/").then(function (result) {
         data = result['data']['Siri']['ServiceDelivery']['VehicleMonitoringDelivery'][0]['VehicleActivity'];
         _this2.setState({
           buses: data
@@ -26489,7 +26489,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           _reactLeaflet.Map,
           { style: { height: "100vh", margin: "0" }, center: [lat, lng], zoom: 12 },
-          _react2.default.createElement(_reactLeaflet.TileLayer, { url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png', attribution: 'Mom' }),
+          _react2.default.createElement(_reactLeaflet.TileLayer, { url: 'https://{s}.tile.osm.org/{z}/{x}/{y}.png', attribution: 'Mom' }),
           buses.map(function (bus) {
             if (bus.MonitoredVehicleJourney.MonitoredCall) {
               return _react2.default.createElement(_BusMarker2.default, { key: bus.MonitoredVehicleJourney.VehicleRef,
